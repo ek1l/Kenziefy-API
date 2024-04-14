@@ -12,3 +12,5 @@ export class BandController {
     return res.status(201).json(band);
   };
 }
+
+export const bandController = new BandController();

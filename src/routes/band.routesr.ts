@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { BandController } from '../controller';
 import { ensure } from '../middleware';
 import { bandCreateSchema } from '../schemas';
+import { bandController } from '../controller';
+
 export const bandRouter = Router();
-const bandController = new BandController();
 
 bandRouter.get('', bandController.list);
 bandRouter.post(
