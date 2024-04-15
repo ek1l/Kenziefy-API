@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsnd --cls --rs src/server.ts",
+    "dev": "tsnd --rs src/server.ts",
     "migrate:dev": "npx prisma migrate dev"
   },
   "keywords": [],

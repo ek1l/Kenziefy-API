@@ -19,7 +19,9 @@ export class TrackController {
   };
 
   public create = async (req: Request, res: Response): Promise<Response> => {
-    const track = await this.service.create(req.body);
+    const payload = { ...req.body, albumId: Number(req.params.albumId) };
+    const track = await this.service.create(payload);
+    console.log(track);
     return res.status(201).json(track);
   };
 }

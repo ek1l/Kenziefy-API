@@ -21,6 +21,7 @@ export class TrackService {
     const newTrack = await this.track.create({
       data: payload,
     });
+    console.log(newTrack);
     return trackSchema.parse(newTrack);
   };
 }

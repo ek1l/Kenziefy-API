@@ -8,6 +8,10 @@ const trackSchema = z.object({
   albumId: z.number().positive(),
 });
 
+const trackCreateSchemaValidator = trackSchema.omit({
+  id: true,
+  albumId: true,
+});
 const trackCreateSchema = trackSchema.omit({ id: true });
 
-export { trackSchema, trackCreateSchema };
+export { trackSchema, trackCreateSchema, trackCreateSchemaValidator };
