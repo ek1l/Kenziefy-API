@@ -24,6 +24,12 @@ export class TrackController {
     console.log(track);
     return res.status(201).json(track);
   };
+
+  public retrieve = async (req: Request, res: Response): Promise<Response> => {
+    const trackId = Number(req.params.trackId);
+    const tracks = await this.service.retrieve(trackId);
+    return res.status(200).json(tracks);
+  };
 }
 
 export const trackController = new TrackController();

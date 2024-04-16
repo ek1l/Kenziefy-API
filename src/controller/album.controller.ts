@@ -4,13 +4,13 @@ import { AlbumService } from '../services';
 export class AlbumController {
   private service = new AlbumService();
   public list = async (req: Request, res: Response): Promise<Response> => {
-    const bands = await this.service.list();
-    return res.status(200).json(bands);
+    const albums = await this.service.list();
+    return res.status(200).json(albums);
   };
 
   public create = async (req: Request, res: Response): Promise<Response> => {
-    const band = await this.service.create(req.body);
-    return res.status(201).json(band);
+    const album = await this.service.create(req.body);
+    return res.status(201).json(album);
   };
 }
 export const albumController = new AlbumController();

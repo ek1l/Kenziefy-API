@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { albumSchema } from './album.schemas';
 
 const trackSchema = z.object({
   id: z.number().positive(),
@@ -13,5 +14,12 @@ const trackCreateSchemaValidator = trackSchema.omit({
   albumId: true,
 });
 const trackCreateSchema = trackSchema.omit({ id: true });
-
-export { trackSchema, trackCreateSchema, trackCreateSchemaValidator };
+const trackRetrieveSchema = trackSchema.omit({ albumId: true }).extend({
+  album: albumSchema,
+});
+export {
+  trackSchema,
+  trackCreateSchema,
+  trackCreateSchemaValidator,
+  trackRetrieveSchema,
+};

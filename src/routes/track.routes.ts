@@ -6,8 +6,10 @@ export const trackRouter = Router();
 
 trackRouter.get('', trackController.list);
 
-trackRouter.post(
-  '',
-  ensure.bodyIsValid(trackCreateSchema),
-  trackController.create,
-);
+trackRouter.get('/:trackId', trackController.retrieve);
+
+// trackRouter.post(
+//   '',
+//   ensure.bodyIsValid(trackCreateSchema),
+//   trackController.create,
+// );

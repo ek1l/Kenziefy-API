@@ -4,4 +4,7 @@ export {
   trackSchema,
   trackCreateSchema,
   trackCreateSchemaValidator,
+  trackRetrieveSchema,
 } from './track.schemas';
+
+export { musicianSchema, musicianCreateSchema } from './musician.schema';
